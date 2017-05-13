@@ -13,11 +13,11 @@ const styles = Style.sheet({
 });
 
 class Greeting extends Component {
+    // And it was super easy for Greeting to implement: just Style.apply() the
+    // incoming style prop, along with any other defaults you want to apply.
+    // It returns a `className` prop for the stable styles, and a `style` prop
+    // for the volatile styles.
     render() {
-        {/* And it was super easy for Greeting to implement: just Style.apply()
-          * the incoming style prop, along with any other defaults you want to
-          * apply. It returns a `className` prop for the stable styles, and a
-          * `style` prop for the volatile styles. */}
         return <div {...Style.apply(styles.greeting, this.props.style)}>
             Hello, world!
         </div>;
