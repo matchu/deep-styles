@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {StyleSheet, css, rule} from 'deep-styles';
+import Style from 'deep-styles';
 
-const styles = StyleSheet.create({
+const styles = Style.sheet({
     greeting: {
         color: "red", // will be overridden by greetingOverride
         marginLeft: 10,
@@ -26,11 +26,11 @@ class App extends Component {
     }
 
     render() {
-        const volatileMargin = rule("volatile-margin", {
+        const volatileMargin = Style.runtime("volatile-margin", {
             marginTop: this.state.marginTop,
         });
 
-        return <div {...css(
+        return <div {...Style.apply(
             styles.greeting, styles.greetingOverride, volatileMargin,
         )}>
             Hello, world!
