@@ -1,41 +1,79 @@
-import React, { Component } from 'react';
-import Style from 'deep-styles';
+import React, { Component } from "react";
+import Style from "deep-styles";
 
-const styles = Style.sheet({
-    greeting: {
-        color: "red", // will be overridden by greetingOverride
-        marginLeft: 10,
-        marginTop: 10, // will be overridden by volatileMargin
-    },
-    greetingOverride: {
-        color: "blue",
-    },
-});
+import Greeting from "./Greeting.js";
 
 class App extends Component {
-    state = {marginTop: 0}
+    state = {mouseX: -999, mouseY: -999}
 
     componentDidMount() {
-        this._interval = setInterval(() => {
-            this.setState(({marginTop}) => ({marginTop: marginTop + 1}));
-        }, 100);
+        window.addEventListener("mousemove", this._handleMouseMove);
     }
 
     componentWillUnmount() {
-        clearInterval(this._interval);
+        window.removeEventListener("mousemove", this._handleMouseMove);
+    }
+
+    _handleMouseMove = (e) => {
+        this.setState({mouseX: e.clientX, mouseY: e.clientY});
     }
 
     render() {
-        const volatileMargin = Style.runtime("volatile-margin", {
-            marginTop: this.state.marginTop,
-        });
+        const {mouseX, mouseY} = this.state;
 
-        return <div {...Style.apply(
-            styles.greeting, styles.greetingOverride, volatileMargin,
-        )}>
-            Hello, world!
+        return <div {...Style.apply(styles.container)}>
+
+            {/* Look, it behaves just like normal `style`! */}
+            <Greeting
+                style={{
+                    left: mouseX + 10,
+                    top: mouseY + 10,
+                }}
+            />
+
+            {/* It also accepts style classes! */}
+            <Greeting
+                style={styles.bigGreeting}
+            />
+
+            {/* You can compose classes! */}
+            <Greeting
+                style={[styles.bigGreeting, styles.blueGreeting]}
+            />
+
+            {/* You can even compose classes with computed `style`s! */}
+            <Greeting
+                style={[styles.smallGreeting, {
+                    left: mouseX + 10,
+                    top: mouseY - 10,
+                }]}
+            />
+
         </div>;
     }
 }
+
+const styles = Style.sheet({
+    container: {
+        background: "#eee",
+        minWidth: "100%",
+        minHeight: "100%",
+        position: "absolute",
+    },
+
+    bigGreeting: {
+        color: "black",
+        fontSize: 30,
+    },
+
+    blueGreeting: {
+        color: "blue",
+        top: "50%",
+    },
+
+    smallGreeting: {
+        fontSize: 12,
+    },
+});
 
 export default App;
