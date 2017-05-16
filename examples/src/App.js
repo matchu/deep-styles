@@ -1,5 +1,6 @@
+// @flow
 import React, { Component } from "react";
-import Style from "deep-styles";
+import StyleSheet from "deep-styles";
 
 import Greeting from "./Greeting.js";
 
@@ -14,14 +15,14 @@ class App extends Component {
         window.removeEventListener("mousemove", this._handleMouseMove);
     }
 
-    _handleMouseMove = (e) => {
+    _handleMouseMove = (e: MouseEvent) => {
         this.setState({mouseX: e.clientX, mouseY: e.clientY});
     }
 
     render() {
         const {mouseX, mouseY} = this.state;
 
-        return <div {...Style.apply(styles.container)}>
+        return <div {...StyleSheet.apply(styles.container)}>
 
             {/* Look, it behaves just like normal `style`! */}
             <Greeting
@@ -53,7 +54,7 @@ class App extends Component {
     }
 }
 
-const styles = Style.sheet({
+const styles = StyleSheet.create({
     container: {
         background: "#eee",
         minWidth: "100%",

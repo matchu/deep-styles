@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Style from 'deep-styles';
+import StyleSheet from 'deep-styles';
 
-const styles = Style.sheet({
+const styles = StyleSheet.create({
     greeting: {
         color: "red",
         fontSize: 24,
@@ -18,7 +18,7 @@ class Greeting extends Component {
     // It returns a `className` prop for the stable styles, and a `style` prop
     // for the volatile styles.
     render() {
-        return <div {...Style.apply(styles.greeting, this.props.style)}>
+        return <div {...StyleSheet.apply(styles.greeting, this.props.style)}>
             Hello, world!
         </div>;
     }
