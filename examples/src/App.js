@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from "react";
-import StyleSheet from "deep-styles";
+import {StyleSheet, CSS} from "deep-styles";
 
 import Greeting from "./Greeting.js";
 
@@ -22,7 +22,7 @@ class App extends Component {
     render() {
         const {mouseX, mouseY} = this.state;
 
-        return <div {...StyleSheet.apply(styles.container)}>
+        return <div {...CSS.apply(styles.container)}>
 
             {/* Look, it behaves just like normal `style`! */}
             <Greeting

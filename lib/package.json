@@ -5,9 +5,10 @@
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build/*",
     "compile": "npm run compile-js && npm run compile-flow",
     "compile-js": "babel src/ -d build/",
-    "compile-flow": "cp src/exported-types.js build/exported-types.js && cp src/apply/css/exported-types.js build/apply/css/exported-types.js && cp src/index.js.flow build/index.js.flow",
+    "compile-flow": "cp src/core/types.js build/core/types.js.flow && cp src/css/types.js build/css/types.js.flow",
     "watch": "babel --watch src/ -d build/",
     "flow": "flow",
     "prepublish": "npm run flow && npm run compile"
