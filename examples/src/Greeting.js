@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
-import {StyleSheet, CSS} from 'deep-styles-css';
+// @flow
+import React, {Component} from "react";
+import {StyleSheet, CSS} from "deep-styles-css";
+import type {StyleDefinition} from "deep-styles-css";
 
 class Greeting extends Component {
+    props: {
+        style: StyleDefinition,
+    }
+
     // And it was super easy for Greeting to implement: just CSS.apply() the
     // incoming style prop, along with any other defaults you want to apply.
     // It returns a `className` prop for the stable styles, and a `style` prop

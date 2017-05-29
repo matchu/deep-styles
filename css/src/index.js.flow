@@ -8,6 +8,7 @@
  * built index.js.
  */
 import type {StyleDefinition, StyleSheetInterface} from "deep-styles-core";
+export type {StyleDefinition};
 
 import type {DOMElementStyleProps} from "./types";
 
