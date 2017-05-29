@@ -1,5 +1,5 @@
 {
-  "name": "deep-styles",
+  "name": "deep-styles-core",
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
@@ -8,10 +8,9 @@
     "clean": "rm -rf build/*",
     "compile": "npm run compile-js && npm run compile-flow",
     "compile-js": "babel src/ -d build/",
-    "compile-flow": "cp src/core/types.js build/core/types.js.flow && cp src/css/types.js build/css/types.js.flow",
     "watch": "babel --watch src/ -d build/",
-    "flow": "flow",
-    "prepublish": "npm run flow && npm run compile"
+    "compile-flow": "cp src/types.js build/types.js.flow && cp src/index.js.flow build/index.js.flow",
+    "prepublish": "flow && npm run compile"
   },
   "author": "",
   "license": "MIT",
@@ -22,8 +21,5 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "flow-bin": "^0.46.0"
-  },
-  "dependencies": {
-    "string-hash": "^1.1.3"
   }
 }

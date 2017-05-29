@@ -1,0 +1,25 @@
+// @flow
+/**
+ * This file includes the type information that we want to preserve when we
+ * build this module and include it elsewhere. We re-export all of our types,
+ * and include type signatures for our external-facing API methods.
+ *
+ * This file is copied into build/ as-is, and is used by Flow in place of the
+ * built index.js.
+ */
+import type {StyleDefinition, StyleSheetInterface} from "deep-styles-core";
+
+import type {DOMElementStyleProps} from "./types";
+
+type CSSInterface = {
+    apply(...definitions: Array<StyleDefinition>): DOMElementStyleProps,
+};
+
+type CSSLibInterface = {
+    StyleSheet: StyleSheetInterface,
+    CSS: CSSInterface,
+};
+
+declare export var StyleSheet: StyleSheetInterface;
+declare export var CSS: CSSInterface;
+declare export default CSSLibInterface;

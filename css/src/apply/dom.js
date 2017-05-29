@@ -1,5 +1,5 @@
 // @flow
-import type {StyleProperty} from "../../core/types";
+import type {StyleProperty} from "deep-styles-core";
 
 import type {CSSDOMStyleMap, DOMElementStyleProps} from "../types";
 import type {StyleBuffer} from "./style-buffer";

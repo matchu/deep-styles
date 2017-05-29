@@ -1,5 +1,5 @@
 // @flow
-import type {StyleProperty, StyleValue} from "../../core/types";
+import type {StyleProperty, StyleValue} from "deep-styles-core";
 import type {CSSStyleValue, CSSDOMStyleMap, StyleMap} from "../types";
 
 function kebabify(key: string): string {

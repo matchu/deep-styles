@@ -7,7 +7,7 @@
     "react-scripts": "1.0.7"
   },
   "dependencies": {
-    "deep-styles": "file:../lib",
+    "deep-styles-css": "file:../css",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -15,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch-lib": "cd ../core && bash -lec \"npm run watch\" & cd ../css && bash -lec \"npm run watch\""
   }
 }

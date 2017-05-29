@@ -1,0 +1,39 @@
+// @flow
+/**
+ * This file includes the type information that we want to preserve when we
+ * build this module and include it elsewhere. We re-export all of our types,
+ * and include type signatures for our external-facing API methods.
+ *
+ * This file is copied into build/ as-is, and is used by Flow in place of the
+ * built index.js.
+ */
+import type {
+    StyleValue,
+    StyleProperty,
+    StyleDefinition,
+    StyleDefinitionProperties,
+    StyleDefinitionRule,
+    StyleSet,
+} from "./types";
+export type {
+    StyleValue,
+    StyleProperty,
+    StyleDefinition,
+    StyleDefinitionProperties,
+    StyleDefinitionRule,
+    StyleSet,
+};
+
+type StyleSheetInterface = {
+    create<D: {[ruleName: string]: StyleDefinition}>(
+        definition: D,
+    ): {[ruleName: $Keys<D>]: StyleDefinitionRule},
+    resolve(definition: StyleDefinition): StyleSet,
+};
+
+type CoreLibInterface = {
+    StyleSheet: StyleSheetInterface,
+};
+
+declare export var StyleSheet: StyleSheetInterface;
+declare export default CoreLibInterface;

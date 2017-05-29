@@ -1,6 +1,6 @@
 // @flow
-import React, { Component } from "react";
-import {StyleSheet, CSS} from "deep-styles";
+import React, {Component} from "react";
+import {StyleSheet, CSS} from "deep-styles-css";
 
 import Greeting from "./Greeting.js";
 

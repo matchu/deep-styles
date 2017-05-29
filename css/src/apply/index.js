@@ -1,6 +1,6 @@
 // @flow
-import type {StyleDefinition} from "../../core/types";
-import {resolveDefinitionToStyleSet} from "../../core/resolve";
+import type {StyleDefinition} from "deep-styles-core";
+import {StyleSheet} from "deep-styles-core";
 
 import type {DOMElementStyleProps} from "../types";
 import {applyStylesAsDOMElementProps} from "./dom";
@@ -14,7 +14,7 @@ export function apply(
     // An array of definitions is itself a definition.
     const definition = definitions;
 
-    const styleSet = resolveDefinitionToStyleSet(definition);
+    const styleSet = StyleSheet.resolve(definition);
 
     return applyStylesAsDOMElementProps(
         styleSet.names, styleSet.properties, globalStyleBuffer);

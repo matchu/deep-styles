@@ -1,11 +1,11 @@
 [ignore]
+<PROJECT_ROOT>/build/.*
 
 [include]
 # All of node_modules is automatically type-checked as part of our app, but, by
 # default, they're parsed once and not watched. Listing our build folders here
 # leads us to *watch* them as well, which eases cross-module development.
 node_modules/deep-styles-core/build/
-node_modules/deep-styles-css/build/
 
 [libs]
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, CSS} from 'deep-styles';
+import {StyleSheet, CSS} from 'deep-styles-css';
 
 const styles = StyleSheet.create({
     greeting: {

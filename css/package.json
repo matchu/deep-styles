@@ -1,0 +1,29 @@
+{
+  "name": "deep-styles-css",
+  "version": "0.0.1",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build/*",
+    "compile": "npm run compile-js && npm run compile-flow",
+    "compile-js": "babel src/ -d build/",
+    "watch": "babel --watch src/ -d build/",
+    "compile-flow": "cp src/types.js build/types.js.flow && cp src/index.js.flow build/index.js.flow",
+    "prepublish": "flow && npm run compile"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "flow-bin": "^0.46.0"
+  },
+  "dependencies": {
+    "deep-styles-core": "file:../core",
+    "string-hash": "^1.1.3"
+  }
+}

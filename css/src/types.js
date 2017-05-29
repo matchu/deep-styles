@@ -1,5 +1,5 @@
 // @flow
-import type {StyleProperty, StyleValue} from "../core/types";
+import type {StyleProperty, StyleValue} from "deep-styles-core";
 
 export type CSSStyleValue = string;
 
