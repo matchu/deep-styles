@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, CSS} from 'deep-styles-css';
 
-const styles = StyleSheet.create({
-    greeting: {
-        color: "red",
-        fontSize: 24,
-
-        position: "absolute",
-        left: 0,
-        top: 0,
-    },
-});
-
 class Greeting extends Component {
     // And it was super easy for Greeting to implement: just Style.apply() the
     // incoming style prop, along with any other defaults you want to apply.
@@ -23,5 +12,16 @@ class Greeting extends Component {
         </div>;
     }
 }
+
+const styles = StyleSheet.create({
+    greeting: {
+        color: "red",
+        fontSize: 24,
+
+        position: "absolute",
+        left: 0,
+        top: 0,
+    },
+});
 
 export default Greeting;
