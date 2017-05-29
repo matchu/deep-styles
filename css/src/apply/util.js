@@ -34,13 +34,3 @@ export function convertToCSSString(
 
     return result;
 }
-
-export function flattenPropertiesToStyleMap(
-    properties: Array<StyleProperty>,
-): StyleMap {
-    const styles = {};
-    for (const property of properties) {
-        styles[property.name] = property.value;
-    }
-    return styles;
-}

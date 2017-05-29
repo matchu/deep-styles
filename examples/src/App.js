@@ -50,6 +50,17 @@ class App extends Component {
                 }]}
             />
 
+            {/* And, unlike traditional CSS-in-JS, order is respected,
+              * regardless of whether a style is applied as a CSS class or as
+              * a style attribute. */}
+            <Greeting
+                style={[
+                    {color: "yellow"},        // This will be overridden.
+                    styles.bigGreeting,
+                    {left: "auto", right: 0}, // This will be applied.
+                ]}
+            />
+
         </div>;
     }
 }
