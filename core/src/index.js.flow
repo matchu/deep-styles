@@ -22,6 +22,7 @@ export type {
     StyleDefinitionProperties,
     StyleDefinitionRule,
     StyleSet,
+    StyleSheetInterface,
 };
 
 type StyleSheetInterface = {
